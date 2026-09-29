@@ -36,7 +36,17 @@ def run(script):
     subprocess.run([sys.executable, os.path.join(HERE, script)], check=True)
 
 
+def check_python():
+    if sys.version_info < (3, 8):
+        raise SystemExit('Python 3.8 or newer is needed (you have %d.%d).' % sys.version_info[:2])
+    try:
+        import PIL  # noqa: F401
+    except ImportError:
+        raise SystemExit('Missing the Pillow image library. Install it with:\n\n    python -m pip install -r requirements.txt\n')
+
+
 def main():
+    check_python()
     spore = find_spore()
     if not spore:
         raise SystemExit('Spore install not found; setup cancelled.')
