@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    name: Tools (Python ${{ matrix.python }}, ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.8', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests (synthetic archives, layouts, registry)
+        run: python -m unittest discover -s tests -v
+
+  engine:
+    name: Engine (Node)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pd engine tests
+        run: node --test tests/engine.test.mjs
+      - name: Syntax check every app module
+        run: for f in app/engine/*.js app/ui/*.js; do node --check "$f" || exit 1; done
+
+  no-ea-assets:
+    name: No EA assets in the repo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refuse extracted game content
+        run: |
+          bad=$(git ls-files | grep -E '^(original_assets|upscale)/|^app/data/.*\.json$|\.(snr|wav|package|spui|rw4)$|^tools/vgmstream/' || true)
+          if [ -n "$bad" ]; then echo "EA content must not be committed:"; echo "$bad"; exit 1; fi
+          echo "clean"

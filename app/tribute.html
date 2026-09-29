@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Anthem Makers</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="ui/tribute.css">
+</head>
+<body>
+<div id="backdrop"></div>
+
+<header class="hero">
+  <div class="orb"><img id="hero-icon" alt=""></div>
+  <p class="kicker">A tribute</p>
+  <h1>The Anthem Makers</h1>
+  <p class="lede">In Spore's Civilization stage, every nation could write its own anthem: pick a beat, draw a melody, add up to four ambient layers, and hear it play across your cities. It took a few seconds to use. It took a composer, an audio director, a small team of engineers and an open-source music language to make.</p>
+  <nav class="jump">
+    <a href="#people">The people</a>
+    <a href="#timeline">Talks and interviews</a>
+    <a href="#how">How it worked</a>
+    <a href="index.html" class="back">Back to the studio</a>
+  </nav>
+</header>
+
+<main>
+  <section id="people">
+    <h2>The people</h2>
+    <p class="section-lede">Press ♪ on a card to hear a sound from the game connected to that person's work, played straight from your own copy of Spore.</p>
+    <div class="cards">
+
+      <article class="card">
+        <figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Brian_Eno_2015.png/500px-Brian_Eno_2015.png" alt="Brian Eno in 2015" loading="lazy"></figure>
+        <div class="body">
+          <h3>Brian Eno</h3>
+          <p class="role">Music design · sound sources</p>
+          <p>The musician who named "ambient music" designed Spore's generative score. He spent time with the audio team teaching their note generator to fall into proper scales and modes. The ambient textures behind the anthem editor are his.</p>
+          <div class="actions">
+            <button class="hear" data-sample="105653a1" data-label="enoLOOPEDpad">♪ enoLOOPEDpad</button>
+            <a href="https://en.wikipedia.org/wiki/Brian_Eno" target="_blank" rel="noopener">Wikipedia</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo icon" data-icon="instruments:6"><img alt=""></figure>
+        <div class="body">
+          <h3>Kent Jolly</h3>
+          <p class="role">Audio Director</p>
+          <p>Jolly led Spore's sound design from about five years before release. He studied electronic music at Mills College and had worked on The Sims and SimCity 3000. With Eno and Aaron McLeran he built the procedural music system, and he helped conceive the anthem's note editor.</p>
+          <div class="actions">
+            <button class="hear" data-sample="7333078b" data-label="astonish drum loop">♪ "astonish" beat</button>
+            <a href="#gdc">His GDC 2008 talk</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo icon" data-icon="instruments:8"><img alt=""></figure>
+        <div class="body">
+          <h3>Aaron McLeran</h3>
+          <p class="role">Procedural music · civilization beats</p>
+          <p>McLeran worked on the procedural music with Jolly and Eno, including "the Shuffler", which assembles the soundtrack from fragments. With Jolly he made the Civilization-stage drum beats, which were then reprocessed into the loops you pick in the Beat panel.</p>
+          <div class="actions">
+            <button class="hear" data-sample="2192bc42" data-label="techno drum loop">♪ "techno" beat</button>
+            <a href="#gdc">GDC 2008 talk</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo icon" data-icon="instruments:7"><img alt=""></figure>
+        <div class="body">
+          <h3>Cyril Saint Girons</h3>
+          <p class="role">Audio engineer · anthem editor</p>
+          <p>He joined Spore's audio team in January 2007, after building EA's procedural audio tool in its R&amp;D group. He conceived the note editor in stages with Jolly, Eno and Wright. His hardest problem was giving musicians enough control while keeping it intuitive for everyone else. He cited <em>Electroplankton</em> as an inspiration, and he presented the official anthem tutorial.</p>
+          <div class="actions">
+            <button class="hear" data-instrument="cpguitar" data-label="anthem guitar">♪ anthem guitar</button>
+            <a href="#tutorial">His tutorial video</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo icon" data-icon="instruments:9"><img alt=""></figure>
+        <div class="body">
+          <h3>Justin Graham</h3>
+          <p class="role">Lead audio engineer</p>
+          <p>He led the engineering side of an audio department that, by Saint Girons's account, included an audio director, a producer, two sound designers, two engineers and freelance contributors. That team shipped a game whose every sound runs through a live music program.</p>
+          <div class="actions">
+            <button class="hear" data-instrument="cpbell" data-label="anthem bell">♪ anthem bell</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Will_Wright_-_Game_Developers_Conference_2010_%282%29_%28cropped%29.jpg/500px-Will_Wright_-_Game_Developers_Conference_2010_%282%29_%28cropped%29.jpg" alt="Will Wright at GDC 2010" loading="lazy"></figure>
+        <div class="body">
+          <h3>Will Wright</h3>
+          <p class="role">Creator of Spore · Maxis</p>
+          <p>Spore's designer shared Eno's fascination with simple rules producing endless variety. The two were first hooked on it by Conway's Game of Life. He was part of the conversations that shaped the note editor.</p>
+          <div class="actions">
+            <button class="hear" data-sample="a8891868" data-label="ice floe ambience">♪ "ice floe" ambience</button>
+            <a href="#longnow">Playing with Time</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Miller_Puckette_auf_der_Linux_Audio_Conference_2014_in_Karlsruhe.jpg/500px-Miller_Puckette_auf_der_Linux_Audio_Conference_2014_in_Karlsruhe.jpg" alt="Miller Puckette at the Linux Audio Conference 2014" loading="lazy"></figure>
+        <div class="body">
+          <h3>Miller Puckette</h3>
+          <p class="role">Creator of Pure Data</p>
+          <p>All of Spore's audio runs on a modified version of Pure Data, the free, open-source visual music language Puckette created. So in Spore you're never listening to a recording, you're listening to a program. This studio runs those same Pd patches.</p>
+          <div class="actions">
+            <a href="https://puredata.info" target="_blank" rel="noopener">puredata.info</a>
+            <a href="https://en.wikipedia.org/wiki/Miller_Puckette" target="_blank" rel="noopener">Wikipedia</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="photo icon" data-icon="ambience:2"><img alt=""></figure>
+        <div class="body">
+          <h3>Spore's audio team, Maxis and EA</h3>
+          <p class="role">Everyone else</p>
+          <p>Sound designers, producers, engineers and contributors whose names aren't in these articles made all of this. If you worked on Spore's audio and would like your name here, it belongs here.</p>
+          <div class="actions">
+            <button class="hear" data-sample="92fd4fa5" data-label="bicycle ambience">♪ "bicycle" ambience</button>
+            <a href="https://www.mobygames.com/game/36030/spore/credits/windows/" target="_blank" rel="noopener">Full credits</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Talks and interviews</h2>
+    <ol class="timeline">
+      <li id="longnow">
+        <span class="when">June 2006</span>
+        <h3>"Playing with Time": Brian Eno and Will Wright</h3>
+        <p>A Long Now Foundation evening in San Francisco. Wright demonstrated Spore while it was still in progress, and Eno played live generative music alongside. They talked about generative creation and the rules that make it work.</p>
+        <div class="embed" data-youtube="Dfc-DQorohc"></div>
+        <p class="links"><a href="https://longnow.org/seminars/02006/jun/26/playing-with-time/" target="_blank" rel="noopener">Long Now seminar page</a></p>
+      </li>
+      <li>
+        <span class="when">February 2008</span>
+        <h3>"The Beat Goes On: Dynamic Music in Spore" (GameSpy)</h3>
+        <p>Eno's week with the audio team, the switch from random notes to scale-aware melodies, and the city anthem editor, where you drag notes along a scale and share your anthem.</p>
+        <p class="links"><a href="https://www.moredarkthanshark.org/eno_int_gspy-feb08.html" target="_blank" rel="noopener">Read the article (archived)</a></p>
+      </li>
+      <li id="gdc">
+        <span class="when">February 2008</span>
+        <h3>GDC 2008: "Procedural Music in SPORE"</h3>
+        <p>Kent Jolly and Aaron McLeran explain the ideas and implementation of Spore's procedural music, and how the system was built. Audio recording, via the Internet Archive.</p>
+        <audio controls preload="none" src="https://archive.org/download/GDC2008Jolly/GDC2008-Jolly.mp3"></audio>
+        <p class="links"><a href="https://archive.org/details/GDC2008Jolly" target="_blank" rel="noopener">Internet Archive</a> · <a href="https://www.gdcvault.com/play/323/Procedural-Music-in" target="_blank" rel="noopener">GDC Vault</a></p>
+      </li>
+      <li>
+        <span class="when">September 2008</span>
+        <h3>"The Magical World of Spore" (Mix magazine, Blair Jackson)</h3>
+        <p>The fullest account of the team. It covers Jolly's five years leading sound design, McLeran's Civilization beats, and how the note editor was conceived in stages by Jolly, Eno, Wright and Saint Girons.</p>
+        <p class="links"><a href="https://www.moredarkthanshark.org/eno_int_mix-sep08.html" target="_blank" rel="noopener">Read the article (archived)</a></p>
+      </li>
+      <li id="tutorial">
+        <span class="when">October 2008</span>
+        <h3>Spore Anthem Tutorial, with Cyril Saint Girons</h3>
+        <p>The official walkthrough of the anthem editor: picking beats, shaping the melody, what the note colours mean, changing note length, and sharing anthems.</p>
+        <div class="embed" data-youtube="iFMZb2GBNIM"></div>
+      </li>
+      <li>
+        <span class="when">October 2008</span>
+        <h3>Audio interview with Cyril Saint Girons (Spore.com)</h3>
+        <p>How the anthem editor was designed, who was on the team, and what inspired it.</p>
+        <p class="links"><a href="http://www.spore.com/comm/updates/update101508" target="_blank" rel="noopener">Spore.com update page</a></p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="how">
+    <h2>How it worked, and how this studio works</h2>
+    <div class="how">
+      <div>
+        <h3>A program, not a recording</h3>
+        <p>The anthem is a Pure Data patch inside Spore's audio files. It restarts drum loops on the downbeat, shuffles through slices, starts your melody on the beat, and drifts ambient layers in and out. The game tells it what you picked, and the patch does the rest.</p>
+      </div>
+      <div>
+        <h3>Your notes, the game's rules</h3>
+        <p>The editor's rules live in a small tuning file: two octaves of C major, up to 16 notes, lengths from a sixteenth to a whole note, and a table of which scale degree likes to follow which. "Generate new anthem" walks that table.</p>
+      </div>
+      <div>
+        <h3>Rebuilt with respect</h3>
+        <p>This studio runs the original patches unchanged, with the original sounds, layouts and art, all read from your own copy of Spore. It was made for personal use, as a thank-you.</p>
+      </div>
+    </div>
+    <p class="thanks">With thanks to <a href="https://github.com/Spore-Community/SporeModder-FX" target="_blank" rel="noopener">SporeModder FX</a> (Eric Mor and the Spore modding community), whose open-source work documented Spore's UI format, and to <a href="https://github.com/vgmstream/vgmstream" target="_blank" rel="noopener">vgmstream</a> for decoding EA's audio.</p>
+  </section>
+</main>
+
+<footer>
+  <p><b>Photo credits</b> (Wikimedia Commons): Brian Eno: <a href="https://commons.wikimedia.org/wiki/File:Brian_Eno_2015.png" target="_blank" rel="noopener">How We Get To Next</a>, CC BY 3.0 · Will Wright: <a href="https://commons.wikimedia.org/wiki/File:Will_Wright_-_Game_Developers_Conference_2010_(2)_(cropped).jpg" target="_blank" rel="noopener">Official GDC</a>, CC BY 2.0 · Miller Puckette: <a href="https://commons.wikimedia.org/wiki/File:Miller_Puckette_auf_der_Linux_Audio_Conference_2014_in_Karlsruhe.jpg" target="_blank" rel="noopener">Andreas Möllenkamp</a>, CC BY 3.0. Portrait orbs use icons from Spore's anthem editor.</p>
+  <p>Spore, its music, sounds, artwork and text © Electronic Arts / Maxis. Sounds on this page load from your own installed copy of the game. Personal, non-commercial tribute.</p>
+</footer>
+
+<script type="module" src="ui/tribute.js"></script>
+</body>
+</html>

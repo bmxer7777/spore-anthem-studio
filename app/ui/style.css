@@ -1,0 +1,115 @@
+:root {
+  --bg0: #050a14;
+  --bg1: #0d1b33;
+  --ink: #e8eefc;
+  --muted: #9fb0cf;
+  --accent: #f0e14c;
+  --card: rgba(10, 20, 40, 0.88);
+  --line: rgba(160, 190, 255, 0.18);
+  --zoom: 1;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg0); color: var(--ink);
+  font-family: SporeUI, "Palatino Linotype", Palatino, "Book Antiqua", serif; overflow: hidden; }
+
+#backdrop {
+  position: fixed; inset: 0;
+  /* Spore's loading-screen doodle tile over its dark blue glow */
+  background:
+    var(--pattern, none) repeat center / 400px 400px,
+    radial-gradient(ellipse at 50% 45%, #3b4a63 0%, #1d2638 38%, #0b0f19 75%, #05070c 100%);
+}
+
+#stage {
+  position: absolute; left: 50%; top: 50%;
+  width: 300px; height: 640px;
+  transform: translate(-50%, -50%) scale(var(--zoom));
+  transform-origin: center center;
+  image-rendering: auto;
+}
+#tab { position: absolute; inset: 0; }
+
+/* ---------- SPUI windows ---------- */
+.spui { position: absolute; background-repeat: no-repeat; user-select: none; }
+.spui.Button { cursor: pointer; }
+.spui > .bg9 { position: absolute; inset: 0; border-style: solid; box-sizing: border-box; pointer-events: none; }
+.spui .caption {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  font-family: SporeUI, "Palatino Linotype", serif; font-size: 13px; font-weight: bold; white-space: nowrap;
+  pointer-events: none;
+}
+.spui.Text .caption { font-size: 15px; letter-spacing: 0.01em; }
+.spui .caption.outlined { text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 0 3px #000; }
+.spui.Button .caption { justify-content: center; color: #1b1300; }
+.spui.frame { border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 3px; }
+.spui.Slider { cursor: ew-resize; touch-action: none; }
+.spui.Slider .track { position: absolute; inset: 0; }
+.spui.Slider .thumb { position: absolute; }
+.spui .textedit {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  background: transparent; border: 0; outline: 0; resize: none;
+  font: bold 14px SporeUI, "Palatino Linotype", serif; color: #10203a; padding: 4px 6px;
+}
+.melody-host { overflow: hidden; }
+.melody-canvas { position: absolute; left: 0; top: 0; display: block; touch-action: none; }
+
+/* choice buttons: "checked" state glow reinforces the game's selected art */
+.spui.Button.checked { filter: drop-shadow(0 0 2px rgba(255, 255, 200, 0.55)); }
+
+/* ---------- dialogs ---------- */
+#dialog { position: absolute; inset: -20px -200px; background: rgba(0, 0, 0, 0.45); z-index: 5; border-radius: 12px; }
+#dialog[hidden] { display: none; }
+.dialog-frame { position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%) scale(0.8); }
+.song-list { overflow: auto; background: rgba(255, 255, 255, 0.85); border-radius: 4px; padding: 4px; }
+.song-list .song { display: block; width: 100%; text-align: left; border: 0; background: transparent; padding: 4px 6px;
+  font: bold 14px SporeUI, serif; color: #10203a; cursor: pointer; border-radius: 3px; }
+.song-list .song:hover { background: rgba(80, 120, 255, 0.15); }
+.song-list .song.sel { background: rgba(240, 225, 76, 0.6); }
+.song-list .empty { color: #45556f; padding: 8px; font-style: italic; }
+.file-io { display: flex; gap: 6px; height: 100%; align-items: center; }
+.mini { white-space: nowrap; font: bold 12px SporeUI, serif; padding: 2px 8px; border-radius: 10px; border: 1px solid #7c6a18;
+  background: linear-gradient(#f6e98a, #c9a93a); color: #221a00; cursor: pointer; }
+
+/* ---------- tooltip ---------- */
+#tooltip {
+  position: fixed; z-index: 20; transform: translateX(-50%);
+  background: rgba(8, 16, 34, 0.94); color: var(--ink); border: 1px solid var(--line);
+  padding: 5px 9px; border-radius: 6px; font: bold 13px SporeUI, serif; pointer-events: none; white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- splash / credits ---------- */
+#splash { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(3, 6, 14, 0.78); z-index: 10;
+  transition: opacity 0.5s; padding: 16px; overflow: auto; }
+#splash.gone { opacity: 0; pointer-events: none; }
+.card { max-width: 620px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); }
+.card h1 { margin: 0 0 8px; font-size: 30px; letter-spacing: 0.02em; color: var(--accent); }
+.card .lede { color: var(--ink); line-height: 1.5; margin: 0 0 16px; }
+#loading { color: var(--muted); }
+#start { font: bold 18px SporeUI, serif; padding: 10px 26px; border-radius: 24px; border: 1px solid #7c6a18; cursor: pointer;
+  background: linear-gradient(#f6e98a, #c9a93a); color: #221a00; box-shadow: 0 4px 14px rgba(240, 225, 76, 0.25); }
+#start:hover { filter: brightness(1.08); }
+.credits { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+.credits summary { cursor: pointer; font-weight: bold; color: var(--accent); }
+.credits ul { padding-left: 18px; line-height: 1.5; }
+.credits li { margin: 4px 0; }
+.small { font-size: 13px; color: var(--muted); line-height: 1.45; }
+
+@media (max-width: 480px) {
+  .card { padding: 18px; }
+  .card h1 { font-size: 24px; }
+}
+
+/* orb icons (game art, white glyphs); the layout shades them to ~53% until selected */
+.spui.orb-icon { background-size: 100% 100% !important; background-repeat: no-repeat; opacity: 0.55; pointer-events: none; }
+.spui.Button:hover > .orb-icon { opacity: 0.8; }
+.spui.Button.checked > .orb-icon { opacity: 1; }
+
+.tribute-teaser { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
+.tribute-teaser p { margin: 0 0 10px; line-height: 1.5; }
+.tribute-link { display: inline-block; font-weight: bold; color: var(--accent); text-decoration: none; padding: 6px 14px; border: 1px solid rgba(240, 225, 76, 0.5); border-radius: 16px; }
+.tribute-link:hover { background: rgba(240, 225, 76, 0.12); }
+#tribute-corner { position: fixed; right: 16px; bottom: 14px; z-index: 8; color: var(--ink); text-decoration: none; font-weight: bold;
+  padding: 7px 14px; border-radius: 16px; background: rgba(170, 185, 225, 0.13); border: 1px solid rgba(200, 215, 255, 0.28); backdrop-filter: blur(6px); }
+#tribute-corner:hover { border-color: var(--accent); color: var(--accent); }

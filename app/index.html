@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spore Anthem Studio</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="ui/style.css">
+</head>
+<body>
+<div id="backdrop"></div>
+
+<main id="stage">
+  <div id="tab"></div>
+  <div id="dialog" hidden></div>
+</main>
+
+<div id="tooltip" hidden></div>
+<a id="tribute-corner" href="tribute.html" title="The people who made the anthem editor">♪ The anthem makers</a>
+<span id="undo-count" hidden></span>
+
+<section id="splash">
+  <div class="card">
+    <h1>Spore Anthem Studio</h1>
+    <p class="lede">The Civilization-stage anthem editor from <em>Spore</em> (2008), running on its own: Spore's own Pure Data music patches, its sounds, and its interface, pulled from your installed copy of the game.</p>
+    <p id="loading">Loading the game's patches and artwork…</p>
+    <button id="start" hidden>Start the music</button>
+    <div class="tribute-teaser">
+      <p>Made by <b>Brian Eno</b>, <b>Kent Jolly</b>, <b>Aaron McLeran</b>, <b>Cyril Saint Girons</b>, <b>Justin Graham</b> and Spore's audio team at <b>Maxis</b>, running on <b>Miller Puckette</b>'s Pure Data.</p>
+      <a class="tribute-link" href="tribute.html">Meet the anthem makers →</a>
+    </div>
+    <p class="small">Music, sounds, art and text © Electronic Arts / Maxis, loaded from your own copy of Spore. Personal use only.</p>
+  </div>
+</section>
+
+<script type="module" src="ui/app.js"></script>
+</body>
+</html>

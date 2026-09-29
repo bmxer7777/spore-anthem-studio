@@ -1,0 +1,18 @@
+# EA / Maxis content extracted from your own copy of Spore: never publish
+original_assets/
+upscale/
+app/data/patches.json
+app/data/samples.json
+app/data/instruments.json
+app/data/tuning.json
+app/data/ui.json
+
+# third-party binaries
+tools/vgmstream/
+tools/vgmstream-win64.zip
+
+__pycache__/
+*.pyc
+
+# per-machine settings (your Spore path)
+tools/local_settings.json
